@@ -15,12 +15,17 @@ public class MovieService {
     }
 
     public Movie getMovie(Long id){
-        Movie movie = restTemplate.getForEntity("http://localhost:8080/movie/" + id, Movie.class).getBody();
+        Movie movie = restTemplate.getForEntity("http://localhost:8080/movies/" + id, Movie.class).getBody();
         return movie;
     }
 
     public Movie returnMovie(Long id) {
-        Movie movie = restTemplate.exchange("http://localhost:8080/movies/return/" + id, HttpMethod.PUT, null,Movie.class).getBody();
+        Movie movie = restTemplate.exchange("http://localhost:8080/movies/" + id + "true", HttpMethod.PUT, null,Movie.class).getBody();
+        return movie;
+    }
+
+    public Movie rentMovie(Long id) {
+        Movie movie = restTemplate.exchange("http://localhost:8080/movies/" + id + "false", HttpMethod.PUT, null,Movie.class).getBody();
         return movie;
     }
 }
