@@ -20,12 +20,12 @@ public class MovieService {
     }
 
     public Movie returnMovie(Long id) {
-        Movie movie = restTemplate.exchange("http://localhost:8080/movies/" + id + "true", HttpMethod.PUT, null,Movie.class).getBody();
+        Movie movie = restTemplate.exchange("http://localhost:8080/movies/" + id + "/true", HttpMethod.PUT, null,Movie.class).getBody();
         return movie;
     }
 
     public Movie rentMovie(Long id) {
-        Movie movie = restTemplate.exchange("http://localhost:8080/movies/" + id + "false", HttpMethod.PUT, null,Movie.class).getBody();
+        Movie movie = restTemplate.exchange("http://localhost:8080/movies/" + id + "/false", HttpMethod.PUT, null,Movie.class).getBody();
         return movie;
     }
 }

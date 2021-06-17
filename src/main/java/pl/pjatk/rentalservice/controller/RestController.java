@@ -21,12 +21,12 @@ public class RestController {
     }
 
 
-    @PutMapping("/return/{id}/false")
+    @PutMapping("/return/{id}")
     public ResponseEntity<Movie> returnMovie(@PathVariable Long id){
         return ResponseEntity.ok(movieService.returnMovie(id));
     }
 
-    @PutMapping("/return/{id}/true")
+    @PutMapping("/rent/{id}")
     public ResponseEntity<Movie> rentMovie(@PathVariable Long id){
         return ResponseEntity.ok(movieService.rentMovie(id));
     }
