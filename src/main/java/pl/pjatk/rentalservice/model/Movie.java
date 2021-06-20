@@ -1,12 +1,20 @@
 package pl.pjatk.rentalservice.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class Movie {
 
+    @ApiModelProperty(notes = "Id: ", required = true, value = "id", example = "1")
     private Long id;
+    @ApiModelProperty(notes = "Title: ", required = true, value = "title", example = "Straszny Film")
     private String title;
+    @ApiModelProperty(notes = "Category: ", required = true, value = "category", example = "Document")
     private Category category;
+    @ApiModelProperty(notes = "Director: ", required = true, value = "director", example = "Mr Smith")
     private String director;
+    @ApiModelProperty(notes = "Rating: ", required = true, value = "rating", example = "2")
     private float rating;
+    @ApiModelProperty(notes = "Availability: ", required = true, value = "isAvailable", example = "true")
     private boolean isAvailable;
 
     public Movie() {
